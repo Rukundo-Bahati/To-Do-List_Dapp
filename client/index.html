@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List DApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.0/dist/web3.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-200 min-h-screen font-sans">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <!-- Header with wallet connection -->
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">
+                <i class="fas fa-list-check text-blue-500 mr-2"></i>
+                To-do List DApp
+            </h1>
+            <button id="connectWalletBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                <i class="fas fa-wallet mr-2"></i>
+                Connect Wallet
+            </button>
+        </header>
+
+        <!-- Network status indicator -->
+        <div id="networkStatus" class="hidden mb-6 p-3 rounded-lg bg-yellow-100 text-yellow-800 flex items-center">
+            <i class="fas fa-exclamation-circle mr-2"></i>
+            <span>Please connect to the correct network</span>
+        </div>
+
+        <!-- Add task form -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+            <div class="flex gap-2">
+                <input id="taskInput" type="text" placeholder="What needs to be done?" 
+                    class="flex-1 border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="addTaskBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg transition-colors">
+                    <i class="fas fa-plus mr-2"></i>Add
+                </button>
+            </div>
+        </div>
+
+        <!-- Task list -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-4 border-b border-gray-200 bg-gray-50">
+                <h2 class="font-semibold text-gray-700 flex items-center">
+                    <i class="fas fa-tasks mr-2 text-blue-500"></i>
+                    Your Tasks
+                </h2>
+            </div>
+            
+            <ul id="taskList" class="divide-y divide-gray-200">
+                <!-- Tasks will be added here dynamically -->
+                <li class="p-4 text-center text-gray-500" id="emptyState">
+                    No tasks yet. Add your first task above!
+                </li>
+            </ul>
+            
+            <div class="p-4 border-t border-gray-200 bg-gray-50 text-sm text-gray-500 flex justify-between items-center">
+                <span id="taskCounter">0 tasks</span>
+                <button id="clearCompletedBtn" class="text-red-500 hover:text-red-700 transition-colors hidden">
+                    <i class="fas fa-trash mr-1"></i> Clear completed
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 text-center text-gray-500 text-sm">
+            Powered by Ethereum <i class="fas fa-ethereum ml-1"></i>
+        </footer>
+    </div>
+
+    <!-- Loading overlay -->
+    <div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white p-6 rounded-xl max-w-sm w-full text-center">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
+            <p class="text-gray-700 font-medium">Processing transaction...</p>
+            <p class="text-gray-500 text-sm mt-2">Please wait while we confirm your transaction</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
