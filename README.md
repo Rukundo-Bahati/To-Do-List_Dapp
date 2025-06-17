@@ -1,6 +1,6 @@
 To-do List DApp
 Overview
-This project is a decentralized To-do List application (DApp) built for a Web3 homework assignment. It uses Ethereum smart contracts to manage tasks on the blockchain, with a frontend for user interaction. The smart contract is written in Solidity, deployed using Truffle and Ganache, and the frontend is built with HTML, JavaScript, Web3.js, Tailwind CSS, and Font Awesome. Users can connect their MetaMask wallet, add tasks, and view them, with all data stored on the blockchain.
+This project is a decentralized To-do List application (DApp). It uses Ethereum smart contracts to manage tasks on the blockchain, with a frontend for user interaction. The smart contract is written in Solidity, deployed using Truffle and Ganache, and the frontend is built with HTML, JavaScript, Web3.js, Tailwind CSS, and Font Awesome. Users can connect their MetaMask wallet, add tasks, and view them, with all data stored on the blockchain.
 Features
 
 Create tasks via a Solidity smart contract.
@@ -24,7 +24,7 @@ Setup Instructions
 
 Clone the Repository (if applicable, or create the project structure):
 git clone https://github.com/Rukundo-Bahati/To-Do-List_Dapp.git
-cd todo-list-dapp
+cd To-Do-List-Dapp
 
 
 Install Dependencies:
